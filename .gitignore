@@ -1,4 +1,9 @@
-config
+config/keys.js
+config/passport.js
+config/keys_dev.js
+# config 
+
+
 node_modules
 frontend/node_modules
 
