@@ -8,6 +8,7 @@ const bodyParser = require('body-parser');
 const users = require("./routes/api/users");
 const tweets = require("./routes/api/tweets");
 
+const passport = require('passport');
 
 mongoose
   .connect(db, { useNewUrlParser: true })
@@ -17,6 +18,10 @@ mongoose
 
 
 app.get("/", (req, res) => res.send("Let's see it update again. Nice."));
+
+app.use(passport.initialize());
+require('./config/passport')(passport);
+
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
